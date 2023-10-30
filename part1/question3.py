@@ -13,7 +13,7 @@
 # different temperatures to craft special materials.
 # 
 # The oven class should have the methods:
-# - add(item) to add an oven to be combined
+# - add(item) to add an ingredient to be combined
 # - freeze() to freeze the ingredients
 # - boil() to boil the ingredients
 # - wait() to combine the ingredients with no change in temperature
@@ -26,18 +26,22 @@
 # formulas and their outputs in the test file, `question3_test.py`.
 
 # This function should return an oven instance!
-def make_oven():
-  None
+from oven import Oven
 
-def alchemy_combine(oven, ingredients, temperature):
-  
+def make_oven():
+  """ Return a new oven's instance """
+  return Oven()
+
+def alchemy_combine(oven: Oven, ingredients: list, temperature: float)-> str:
+  """ Combine the ingredients in the magical oven at the given temperature """
+
   for item in ingredients:
     oven.add(item)
 
   if temperature < 0:
     oven.freeze()
   elif temperature >= 100:
-    oven.boil()
+    oven.boil(temperature=temperature)
   else:
     oven.wait()
 
