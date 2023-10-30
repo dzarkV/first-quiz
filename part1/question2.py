@@ -15,7 +15,10 @@
 # it. As always, there is a test suite that checks the result. It is in 
 # `question2_test.py.`
 
-swapper = None
+def swapper(item):
+  """ Swap the elements in a tuple of two items. """
+  return item[1], item[0]
 
-def run_swapper(list_of_tuples):
+def run_swapper(list_of_tuples: list[tuple])-> list[tuple]:
+  """ Call a swap the elements in a list of tuples. """
   return list(map(swapper, list_of_tuples))
