@@ -22,7 +22,7 @@ install the pytest testing library.
 ```python
 python3 -m venv venv
 source venv/bin/activate 
-pip install pytest
+pip install -r requirements.txt
 ```
 
 *If you ever need to close your terminal and come back later:* You can enter the virtual environment from the same
