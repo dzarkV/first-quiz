@@ -30,7 +30,7 @@ directory by typing `source venv/bin/activate`.
 
 # How to Work on the Questions
 
-Each question is a unique challenge. 
+Each question is a unique challenge.
 
 - Question 1 is about solving a bug in an existing tiny program.
 - Question 2 is about writing a simple function.
@@ -39,7 +39,7 @@ Each question is a unique challenge.
 - Question 5 is about changing the tables you worked with in Question 4.
 
 Each question is in a file named something like, for example, `question3.py`. Every question also has VERY useful
-test cases in files like, for example, `question3_test.py`.  The specific instructions for how to solve the question 
+test cases in files like, for example, `question3_test.py`.  The specific instructions for how to solve the question
 are in the file.
 
 You can test if your solution is correct by running `pytest` against the test file. For example:
@@ -49,5 +49,5 @@ pytest question3_test.py
 ```
 
 If the test file passes then you have succeeded. This is how you will be graded.
-It is highly recommended that you read the test file to know the expected output of your questions! 
+It is highly recommended that you read the test file to know the expected output of your questions!
 You can learn more about how pytest works here: https://docs.pytest.org/en/7.4.x/contents.html
