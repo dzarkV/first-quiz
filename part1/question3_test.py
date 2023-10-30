@@ -1,3 +1,5 @@
+from question3 import alchemy_combine, make_oven
+
 def test_alchemy_combine():
 
   assert alchemy_combine(
@@ -17,3 +19,15 @@ def test_alchemy_combine():
     ["cheese", "dough", "tomato"],
     150
   ) == "pizza"
+
+  assert alchemy_combine(
+    make_oven(),
+    ["beans", "pig foot", "salt"],
+    60
+  ) == "mixing beans, pig foot, salt"
+
+  assert alchemy_combine(
+    make_oven(),
+    ["beans", "pig foot", "salt"],
+    120
+  ) == "boiled beans, pig foot, salt"
