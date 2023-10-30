@@ -16,7 +16,7 @@ You will need to have Python3.6 or better installed on your computer.
 
 # Getting Started
 
-To get started run the below commands. They will create a new Python3 virtual environment, activate it, and 
+To get started run the below commands. They will create a new Python3 virtual environment, activate it, and
 install the pytest testing library.
 
 ```python
