@@ -1,4 +1,4 @@
-import pets_db
+
 
 ################################################################################
 #     ____                          __     _                          __ __
@@ -11,7 +11,7 @@ import pets_db
 ################################################################################
 #
 # Instructions:
-# Question 4 and Question 5 are about writing SQL. THey use the database that is 
+# Question 4 and Question 5 are about writing SQL. They use the database that is 
 # created in the file `pets_db.py`. 
 # These questions use a database called SQLite. You do not need to install anything.
 # In the file `pets_db.py` three tables are created. Data is then added to each 
@@ -24,9 +24,13 @@ import pets_db
 
 sql_pets_owned_by_nobody = """
 
-Your SQL here.
+SELECT name, species, age
+FROM animals a
+WHERE animal_id 
+NOT IN (SELECT pet_id FROM people_animals);
 
 """
+
 
 # Part 4.B:
 # Write SQL to select how the number of pets are older than their owners. 
@@ -34,7 +38,13 @@ Your SQL here.
 
 sql_pets_older_than_owner = """
 
-Your SQL here.
+SELECT COUNT(animal_id)
+FROM animals a 
+JOIN people_animals pa 
+	ON a.animal_id = pa.pet_id
+JOIN people p 
+	ON pa.owner_id = p.person_id 
+WHERE a.age > p.age;
 
 """
 
@@ -43,6 +53,19 @@ Your SQL here.
 # The output should be a list of tuples in the format: (<person name>, <pet name>, <species>)
 sql_only_owned_by_bessie = """ 
 
-Your SQL here.
+SELECT p.name, a.name, a.species
+FROM animals a 
+JOIN people_animals pa 
+	ON a.animal_id = pa.pet_id
+JOIN people p 
+	ON pa.owner_id = p.person_id
+WHERE p.name LIKE 'Bessie'
+AND a.animal_id <> (
+	-- pets' id who is owned by two or more people
+	SELECT pet_id
+	FROM people_animals 
+	GROUP BY pet_id
+	HAVING ( COUNT(pet_id) > 1 )
+);
 
 """
