@@ -51,3 +51,14 @@ pytest question3_test.py
 If the test file passes then you have succeeded. This is how you will be graded.
 It is highly recommended that you read the test file to know the expected output of your questions!
 You can learn more about how pytest works here: https://docs.pytest.org/en/7.4.x/contents.html
+
+---
+
+## Answers' test report
+
+You can check the tests' results in your browser simply double clicking on [tests report](./tests_report.html) file,
+or regenerate it with:
+
+```python
+pytest --html=tests_report.html --self-contained-html
+```
